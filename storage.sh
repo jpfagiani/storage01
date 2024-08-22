@@ -16,10 +16,10 @@ apt install nfs-common nfs-kernel-server -y
 		tune2fs -L disciplina /dev/sdc1
 	mkfs -t ext4 /dev/sdd1
 		tune2fs -L publico /dev/sdd1
-	mkdir -pv /srv/supervisao /srv/disciplina /srv/pulbico
+	mkdir -pv /srv/supervisao /srv/disciplina /srv/publico
 		echo LABEL=supervisao /srv/supervisao ext4 defaults 0 0 >> /etc/fstab
 		echo LABEL=disciplina /srv/disciplina ext4 defaults 0 0 >> /etc/fstab
-		echo LABEL=publico    /srv/pulbico    ext4 defaults 0 0 >> /etc/fstab
+		echo LABEL=publico    /srv/publico    ext4 defaults 0 0 >> /etc/fstab
 for i in .homes .drivers .lixeiras publico; do mkdir -pv /srv/publico/$i; done 
 for i in sindicancia supervisao cimic; do mkdir -pv /srv/supervisao/$i; done
 for i in chefia_turno_I chefia_turno_II chefia_turno_III chefia_turno_IV conexao_familiar administrativo aevp almoxarifado canil  cpd dcsd educacao financas inclusao infraestrutura  saude ; do mkdir -pv /srv/disciplina/$i; done
