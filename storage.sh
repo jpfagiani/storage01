@@ -8,8 +8,6 @@ apt install nfs-common nfs-kernel-server -y
 	cp -rv /root/storage/etc/* /etc/
 	chattr +i /etc/resolv.conf
 	systemctl restart networking sshd
-	#mkfs -t xfs /dev/sdb1
-	#	xfs-admin -L supervisao /dev/sdb1 
 	mkfs -t ext4 /dev/sdb1
 		tune2fs -L supervisao /dev/sdb1
 	mkfs -t ext4 /dev/sdc1
